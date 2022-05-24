@@ -5,7 +5,7 @@
 
 <h1>Client Side Private repo link</h1>
 
-* 
+* https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mdashikqbl
 
 <h1>Server Side Private repo link</h1>
 
@@ -18,7 +18,7 @@
  *  Customers Reviews.
  *  admin role 
  *  order DashBoard
- *  FAQ PAGE WITH TOW ANSWER
+ *  FAQ PAGE WITH TO ANSWER
  *  No reload issus. 
 
 <h1>Use Technologies </h1>
@@ -26,6 +26,11 @@
 <h3>Browsers</h3>
 
 * Google Chrome 
+
+<h3>Css Frameworks</h3>
+
+* TailwindCss
+* 
 
 <h3>Web Development Frameworks</h3>
 

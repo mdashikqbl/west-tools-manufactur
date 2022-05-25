@@ -3,6 +3,21 @@ module.exports = {
   theme: {
     extend: {},
   },
+  daisyui: {
+    themes: [
+      {
+        Westtheme: {
+          primary: "#F7345E",
+          secondary: "#7118A5",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
+        },
+      },
+      "dark",
+      "cupcake",
+    ],
+  },
   //...
   plugins: [require("daisyui")],
 }

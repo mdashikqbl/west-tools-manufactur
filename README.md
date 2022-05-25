@@ -9,7 +9,7 @@
 
 <h1>Server Side Private repo link</h1>
 
-* 
+* https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mdashikqbl
 
  <h1>Use Features</h1>
 
@@ -30,7 +30,7 @@
 <h3>Css Frameworks</h3>
 
 * TailwindCss
-* 
+* Daisy UI
 
 <h3>Web Development Frameworks</h3>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Reviews from '../../Reviews';
 import Footer from '../Shared/Footer';
 import Tools from '../Tools/Tools';
 import Banner from './Banner';
@@ -13,6 +14,7 @@ const Home = () => {
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
             <OurOtherCategory></OurOtherCategory>
+            <Reviews />
             <Footer></Footer>
         </div>
     );

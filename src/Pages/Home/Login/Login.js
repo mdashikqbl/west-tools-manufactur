@@ -26,9 +26,12 @@ const Login = () => {
 
     }
 
+
     if (user) {
         navigate(from, { replace: true });
     }
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -64,6 +67,7 @@ const Login = () => {
                                 {errorElement}
                                 <Link className='text-sm mt-4 text-center' to={'/signup'}>Don't have a Account? <span className='text-secondary font-bold'>New Account</span> </Link>
                             </div>
+
                         </form>
                         <SocialLogin></SocialLogin>
                     </div>

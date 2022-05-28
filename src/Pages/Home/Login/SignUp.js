@@ -25,13 +25,13 @@ const SignUp = () => {
 
     const handleSignUp = async event => {
         event.preventDefault();
-        const name = nameRef.current.value;
+        const displayName = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
 
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: event.name });
+        await updateProfile({ displayName });
 
     }
     return (

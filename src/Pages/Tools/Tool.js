@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tool = ({ sixtool }) => {
-    const { img, name, descripation, minimumOrderQuantity, price, availableQuantity } = sixtool;
+    const navigate = useNavigate();
+
+    const { _id, img, name, descripation, minimumOrderQuantity, price, availableQuantity } = sixtool;
+    const handleNavigate = () => {
+        navigate(`/tools/${_id}`);
+    }
     return (
         <div class="card w-96 bg-base-100 shadow-2xl">
             <figure class="px-10 pt-10">
@@ -14,7 +20,7 @@ const Tool = ({ sixtool }) => {
                 <p>availableQuantity:{availableQuantity}</p>
                 <p>{descripation}</p>
                 <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
+                    <button onClick={() => handleNavigate(_id)} class="btn btn-primary">Order Now</button>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../firebase.init';
@@ -9,6 +9,8 @@ const OrderDetail = () => {
     const { toolsId } = useParams();
     const [tool, setTool] = useState({});
     const [user] = useAuthState(auth);
+    const quantityRef = useRef(0);
+    const num = quantityRef.current.value;
 
     useEffect(() => {
         fetch(`http://localhost:5000/tool/${toolsId}`)
@@ -16,26 +18,51 @@ const OrderDetail = () => {
             .then(data => setTool(data))
 
     }, [])
-
+    // const handleSubmit = () => {
+    //     const number = 0;
+    //     if (number < tool.minimumOrderQuantity) {
+    //         alert('order minimum quantity!');
+    //     }
+    //     if (number < tool.availableQuantity) {
+    //         alert('order Available Quantity!');
+    //     }
+    // }
 
 
     const handleOrder = event => {
         event.preventDefault();
 
+        const order = {
+            order: tool._id,
+            name: tool.name,
+            img: tool.img,
+            descripation: tool.descripation,
+            price: tool.price,
+            customerName: user.displayName,
+            email: user.email,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+            quantity: event.target.quantity.value,
+        }
+        console.log(order)
+
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
 
 
-
+            })
 
     }
-    const handleSubmit = () => {
-        const number = 0;
-        if (number < tool.minimumOrderQuantity) {
-            alert('order minimum quantity!');
-        }
-        if (number < tool.availableQuantity) {
-            alert('order Available Quantity!');
-        }
-    }
+
+
 
     return (
         <div>
@@ -54,7 +81,7 @@ const OrderDetail = () => {
                                     <h1 className='text-center text-primary text-3xl uppercase font-bold'>Purchase</h1>
                                     <h3 className='text-center text-secondary font-bold text-lg'>Quantity</h3>
                                     <div class="form-control w-40 mx-auto  ">
-                                        <input name='number' type="number" class="input input-bordered" />
+                                        <input ref={quantityRef} name='quantity' type="number" class="input input-bordered" />
                                     </div>
 
                                     <div class="form-control mt-5 ">
@@ -67,8 +94,9 @@ const OrderDetail = () => {
                                         <input name='address' type="text" placeholder="Your Address" class="input input-bordered" /></div>
                                     <div class="form-control mt-3">
                                         <input name='phone' type="text" placeholder="phone number" class="input input-bordered" /></div>
-                                    <div onClick={handleSubmit} class="form-control mt-6">
-                                        <button class="btn btn-primary">Submit</button>
+                                    <div class="form-control mt-6">
+                                        <button disabled={tool.minimumOrderQuantity < num} class="btn btn-primary">Submit</button>
+
                                     </div>
                                 </div>
                             </form>

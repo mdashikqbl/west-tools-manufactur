@@ -20,14 +20,14 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <div class=" flex flex-col mx-auto w-4/5 border-opacity-20">
-                <div class="divider">OR</div>
+            <div className=" flex flex-col mx-auto w-4/5 border-opacity-20">
+                <div className="divider">OR</div>
             </div>
             {errorElement}
             <div className=''>
                 <div className='text-center mt-4 '>
 
-                    <button onClick={() => signInWithGoogle()} class="btn btn-xs sm:btn-sm md:btn-md lg:btn-xl bg-primary text-w  border-0 hover:btn-secondary text-white"><img className='w-7' src="https://i.ibb.co/6YJNJwr/google-1.png" alt="" /> <p className='ml-4'>Continue With Google</p></button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xl bg-primary text-w  border-0 hover:btn-secondary text-white"><img className='w-7' src="https://i.ibb.co/6YJNJwr/google-1.png" alt="" /> <p className='ml-4'>Continue With Google</p></button>
                 </div>
             </div>
         </div>

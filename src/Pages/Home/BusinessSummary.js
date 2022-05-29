@@ -36,12 +36,12 @@ const BusinessSummary = () => {
             <div className='mt-10 grid grid-cols-2 lg:grid-cols-4 bg-gray-400'>
                 {
                     business.map(summery =>
-                        <div key={summery.id} class="card w-44 ">
-                            <figure class="px-10 pt-10">
-                                <img src={summery.img} alt="Shoes" class="rounded-xl" />
+                        <div key={summery.id} className="card w-44 ">
+                            <figure className="px-10 pt-10">
+                                <img src={summery.img} alt="Shoes" className="rounded-xl" />
                             </figure>
-                            <div class="card-body items-center text-center">
-                                <h2 class="card-title text-4xl text-secondary">{summery.number}</h2>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title text-4xl text-secondary">{summery.number}</h2>
                                 <p className='text-secondary'>{summery.name}</p>
 
                             </div>

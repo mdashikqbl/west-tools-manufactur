@@ -20,11 +20,26 @@ const MyOrders = () => {
         }
 
     }, [user])
+
+    const handleCancel = id => {
+        const proceed = window.confirm('are you sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/order/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = orders.filter(orders => orders._id !== id)
+                    setOrders(remaining);
+                })
+        }
+    }
     return (
         <div>
 
-            <div class="overflow-x-auto">
-                <table class="table w-10/12">
+            <div className="overflow-x-auto">
+                <table className="table w-10/12">
 
                     <thead>
                         <tr>
@@ -43,7 +58,7 @@ const MyOrders = () => {
                     <tbody>
                         {
                             orders.map((order, index) =>
-                                <tr>
+                                <tr key={order._id}>
                                     <th>{index + 1}</th>
                                     <td>{order.name}</td>
                                     <td>{order.price}</td>
@@ -51,8 +66,8 @@ const MyOrders = () => {
                                     <td>{order.email}</td>
                                     <td>{order.address}</td>
                                     <td>{order.phone}</td>
-                                    <button onClick={handlepay} class="bg-green-500 border-0 btn btn-sm">pay</button>
-                                    <button class=" bg-primary border-0 ml-4 btn btn-sm">cancel</button>
+                                    <button onClick={handlepay} className="bg-green-500 border-0 btn btn-sm">pay</button>
+                                    <button onClick={handleCancel} className=" bg-primary border-0 ml-4 btn btn-sm">cancel</button>
 
                                 </tr>
                             )

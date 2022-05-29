@@ -41,29 +41,29 @@ const Login = () => {
 
     }
     return (
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero min-h-screen bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse">
 
-                <div class="card flex-shrink-0 w-80 max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-80 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit} >
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" ref={emailRef} placeholder="email" class="input input-bordered" required />
+                                <input type="email" ref={emailRef} placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" ref={passwordRef} placeholder="password" class="input input-bordered" />
-                                <label class="label">
-                                    <a class="label-text-alt link no-underline ">Forgot password?</a>
+                                <input type="password" ref={passwordRef} placeholder="password" className="input input-bordered" />
+                                <label className="label">
+                                    <a className="label-text-alt link no-underline ">Forgot password?</a>
                                 </label>
                             </div>
-                            <div class="form-control mt-6">
-                                <button onClick={() => signInWithEmailAndPassword()} class="btn btn-primary">Login</button>
+                            <div className="form-control mt-6">
+                                <button onClick={() => signInWithEmailAndPassword()} className="btn btn-primary">Login</button>
                                 {errorElement}
                                 <Link className='text-sm mt-4 text-center' to={'/signup'}>Don't have a Account? <span className='text-secondary font-bold'>New Account</span> </Link>
                             </div>

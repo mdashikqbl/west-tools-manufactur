@@ -29,7 +29,7 @@ const OrderDetail = () => {
         }
 
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://secret-earth-69655.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const OrderDetail = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${toolsId}`)
+        fetch(`https://secret-earth-69655.herokuapp.com/tool/${toolsId}`)
             .then(res => res.json())
             .then(data => setTool(data))
 

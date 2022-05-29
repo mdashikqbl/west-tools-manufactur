@@ -15,17 +15,17 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`)
+            fetch(`https://secret-earth-69655.herokuapp.com/order?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
 
     }, [user])
 
-    const handleCancel = () => {
+    const handleCancel = (id) => {
         const proceed = window.confirm('are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`
+            const url = `https://secret-earth-69655.herokuapp.com/order/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

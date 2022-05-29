@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAEZW5JecHKjBSe0F6cHZ-XjQlXfPe1jkM",
-    authDomain: "westtool-auth.firebaseapp.com",
-    projectId: "westtool-auth",
-    storageBucket: "westtool-auth.appspot.com",
-    messagingSenderId: "227637323257",
-    appId: "1:227637323257:web:6efff610b8a4eff7ac0928"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KYE,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MASSAGE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase

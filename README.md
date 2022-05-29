@@ -1,6 +1,6 @@
 <h1>Website Live Site Link</h1>
 
-* 
+* https://westtool-auth.web.app/
 
 
 <h1>Client Side Private repo link</h1>
@@ -38,6 +38,7 @@
 * React Router
 * React Firebase hooks
 * react Hooks Forms 
+* react toast
 
 <h3>API</h3>
 

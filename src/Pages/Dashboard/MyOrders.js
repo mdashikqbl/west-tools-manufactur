@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
@@ -21,7 +22,7 @@ const MyOrders = () => {
 
     }, [user])
 
-    const handleCancel = id => {
+    const handleCancel = () => {
         const proceed = window.confirm('are you sure?');
         if (proceed) {
             const url = `http://localhost:5000/order/${id}`
@@ -30,8 +31,9 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    const remaining = orders.filter(orders => orders._id !== id)
-                    setOrders(remaining);
+                    console.log(data)
+                    toast.success(`order:${orders} is deleted.`)
+                    setOrders(null);
                 })
         }
     }
@@ -39,7 +41,7 @@ const MyOrders = () => {
         <div>
 
             <div className="overflow-x-auto">
-                <table className="table w-10/12">
+                <table className="table w-11/12">
 
                     <thead>
                         <tr>
@@ -66,8 +68,10 @@ const MyOrders = () => {
                                     <td>{order.email}</td>
                                     <td>{order.address}</td>
                                     <td>{order.phone}</td>
-                                    <button onClick={handlepay} className="bg-green-500 border-0 btn btn-sm">pay</button>
-                                    <button onClick={handleCancel} className=" bg-primary border-0 ml-4 btn btn-sm">cancel</button>
+
+                                    <button onClick={handlepay} className="bg-green-500 border-0 btn btn-sm  ">pay</button>
+
+                                    <button onClick={() => handleCancel()} className=" bg-primary border-0 ml-5  btn btn-sm">cancel</button>
 
                                 </tr>
                             )

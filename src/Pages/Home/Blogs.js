@@ -3,7 +3,11 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <h1>his is blog site </h1>
+            <h1 className=''>ANSWER & QUESTIONS</h1>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     );
 };

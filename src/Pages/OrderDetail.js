@@ -80,7 +80,7 @@ const OrderDetail = () => {
                             <form className='text-center  h-96 mt-12 bg-slate-400 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 
                                 {/* lavel */}
-                                <div class="form-control w-full max-w-xs mx-auto">
+                                <div className="form-control w-full max-w-xs mx-auto">
 
                                     <input
 
@@ -96,11 +96,11 @@ const OrderDetail = () => {
 
                                         })}
                                         placeholder='Quantity'
-                                        className='text-center w-40 py-2 indent-3 rounded-lg' type="number" />
+                                        className='text-center w-40 py-2 indent-3 rounded-lg ' type="number" />
 
-                                    <label class="label">
-                                        {errors.quantity?.type === 'min' && <span class="label-text-alt">{errors.min?.message}</span>}
-                                        {errors.quantity?.type === 'max' && <span class="label-text-alt">{errors.max?.message}</span>}
+                                    <label className="label">
+                                        {errors.quantity?.type === 'min' && <span className="label-text-alt text-primary">{errors.quantity?.message}</span>}
+                                        {errors.quantity?.type === 'max' && <span className="label-text-alt">{errors.quantity?.message}</span>}
 
 
                                     </label>

@@ -35,7 +35,18 @@ const Blogs = () => {
             </div>
             <div>
                 <h2 className='text-2xl'>3.How does prototypical inheritance work?</h2>
-
+                <p className='mt-3'>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object.In programming, we often want to take something and extend it. For instance, we have a user object with its properties and methods, and want to make admin and guest as slightly modified variants of it.Prototype-based programming is a style of object-oriented programming in which behaviour reuse (known as inheritance) is performed via a process of reusing existing objects that serve as prototypes. This model can also be known as prototypal, prototype-oriented, classless, or instance-based programming.</p>
+            </div>
+            <div>
+                <h2 className='text-2xl'>4. You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
+                <p className='mt-3'>
+                    Arrays are used when there is need to use many variables of the same type. It can be defined as a sequence of objects which are of the same data type. It is used to store a collection of data and it is more useful to think of an array as a collection of variables of the same type.Storing Data in Arrays. Assigning values to an element in an array is similar to assigning values to scalar variables. Simply reference an individual element of an array using the array name and the index inside parentheses, then use the assignment operator (=) followed by a value.An array is a sequence of values; the values in the array are called elements. You can make an array of int s, double s, or any other type, but all the values in an array must have the same type. To create an array, you have to declare a variable with an array type and then create the array itself.
+                </p>
+            </div>
+            <div>
+                <h2 className='text-2xl'>5.What is a unit test? Why should write unit tests?</h2>
+                <p className='mt-3'>UNIT TESTING is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object.
+                    Unit Testing is important because software developers sometimes try saving time doing minimal unit testing and this is myth because inappropriate unit testing leads to high cost Defect fixing during System Testing, Integration Testing and even Beta Testing after application is built. If proper unit testing is done in early development, then it saves time and money in the end.</p>
             </div>
             <div></div>
         </div>
